@@ -1,0 +1,42 @@
+<!-- Title for the Login-->
+<ion-header>
+  <ion-toolbar color="dark">
+    <div>
+      <ion-title class="ion-text-center">
+        Login
+      </ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+    <!-- Add login form for the Login page -->
+    <ion-content color="light">
+      <form #form="ngForm" (ngSubmit)="login(form)">
+        <ion-grid>
+          <ion-row color="light" class="ion-justify-content-center">
+            <ion-col class="ion-align-self-center" size-md="6" size-lg="5" size-xs="12">
+              <div class="ion-padding">
+                <ion-item>
+                  <ion-input name="email" type="email" placeholder="Email" ngModel required></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input name="password" type="password" placeholder="Password" ngModel required></ion-input>
+                </ion-item>
+              </div>
+              <div class="ion-margin-horizontal" id="bad-login" style="display: none; color: red">Invalid email and/or password</div>
+              <div class="ion-margin-horizontal">
+                <ion-button color="dark" size="medium" type="submit" [disabled]="form.invalid" expand="block">
+                  Login
+                </ion-button>
+                <input type="submit" style="display: none" />
+              </div>
+              <div class="ion-margin-horizontal">
+                <ion-button color="dark" size="medium" type="button" expand="block" [routerLink]="['/signup']">
+                  Sign up
+                </ion-button>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </form>
+    </ion-content>

@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="medium">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title text-center>
+      Details
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full">
+    <ion-item>
+      <ion-input required type="text" placeholder="Task" [(ngModel)]="todo.task"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input required type="text" placeholder="Description" [(ngModel)]="todo.description"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-datetime placeholder="Select Date" [(ngModel)]="todo.date"></ion-datetime>
+    </ion-item>
+  </ion-list>
+  <div>
+    <ion-button expand="block" color="success" shape="round" (click)="saveTodo()">Save</ion-button>
+  </div>
+</ion-content>
