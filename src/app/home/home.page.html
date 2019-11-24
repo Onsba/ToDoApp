@@ -1,17 +1,14 @@
 <ion-header>
-  <ion-toolbar color="light">
-    <ion-title text-center>
-      To Do List
-    </ion-title>
-    <ion-buttons slot="end">
-        <ion-button (click)="logout()">
-            <ion-icon slot="icon-only" name="log-out"></ion-icon>
-          </ion-button>
-      </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar color="dark">
+      <div>
+        <ion-title class="ion-text-center">
+          To Do List
+        </ion-title>
+      </div>
+    </ion-toolbar>
+  </ion-header>
 
-<ion-content>
+<ion-content color="light">
   <ion-list>
     <ion-item-sliding *ngFor="let item of todos">
       <ion-item lines="inset" button [routerLink]="['/details', item.id]">
@@ -27,6 +24,11 @@
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+      <ion-fab-button color="danger" (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button color="success" routerLink="/details" routerDirection="forward">
       <ion-icon name="add"></ion-icon>

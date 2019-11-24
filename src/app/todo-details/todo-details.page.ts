@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { TodoService, Todo } from '../services/todo.service';
 import { ActivatedRoute } from '@angular/router';
 import { LoadingController, NavController } from '@ionic/angular';
-import { LoadingOptions, saveConfig } from '@ionic/core';
 
 @Component({
   selector: 'app-todo-details',
